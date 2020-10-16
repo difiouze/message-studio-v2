@@ -6,7 +6,7 @@ import "./style.css";
 import Design from "./Components/Design";
 import Homepage from "./Components/Homepage";
 import Mobile from "./Components/Mobile";
-import Product from "./Components/Product";
+import Product from "./Components/Product"; 
 
 // Material UI //
 import {
@@ -32,8 +32,8 @@ function App() {
     palette: {
       type: "dark",
       primary: {
-        main: '#fff'
-      }
+        main: '#F50057'
+      },
     },
   });
 
@@ -78,14 +78,6 @@ function App() {
     setSelectedTab(newValue);
   };
 
-  function CopyToClipboard() {
-    var r = document.createRange();
-    r.selectNode(document.querySelector(".copied"));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-  }
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -167,7 +159,7 @@ function App() {
               <Tab label="Mobile" />
             </Tabs>
 
-            {selectedTab === 0 && <Design studioName={studioName} />}
+            {selectedTab === 0 && <Design studioName={studioName}/>}
             {selectedTab === 1 && (
               <Homepage
                 studioName={studioName}

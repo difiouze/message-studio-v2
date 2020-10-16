@@ -1,17 +1,50 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 
 const Design = ({ studioName }) => {
+
+  const copyDivToClipboard = (e) =>{
+    e.preventDefault();
+    e.stopPropagation();
+    let range = document.createRange();
+    range.selectNode(document.querySelector(".copySelection"));
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+}
+  
   return (
     <>
-      <Box pt={3} pb={3}>
-        <Typography>Studio Graphique &gt; Installation de votre design</Typography>
+      <Box
+        display={"flex"}
+        border={1}
+        borderRadius="borderRadius"
+        borderColor={"action.disabled"}
+        p={2}
+        my={2}
+      >
+        <Box flexGrow={1}>
+          <Typography className={"copySelection"}>
+            Studio Graphique &gt; Installation de votre design
+          </Typography>
+        </Box>
+        <Box>
+          <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyDivToClipboard}/>
+        </Box>
       </Box>
 
-      <Box>
-        <Typography>
-          <p>
+      <Box
+        display={"flex"}
+        border={1}
+        borderRadius="borderRadius"
+        borderColor={"action.disabled"}
+        p={2}
+      >
+        <Box flexGrow={1}>
+          <Typography className={"copySelection"}>
             Bonjour,
             <br />
             <br />
@@ -50,8 +83,11 @@ const Design = ({ studioName }) => {
             <br />
             {studioName} - Studio Graphique <br />
             New Oxatis
-          </p>
-        </Typography>
+          </Typography>
+        </Box>
+        <Box>
+        <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyDivToClipboard}/>
+        </Box>
       </Box>
     </>
   );

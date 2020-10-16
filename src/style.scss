@@ -1,3 +1,18 @@
 body {
   margin: 0;
 }
+
+.copySelection {
+
+&__icon {
+    cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+&:hover {
+  opacity: 0.7;
+}
+}
+
+
+
+}
