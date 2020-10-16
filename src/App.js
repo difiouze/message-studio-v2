@@ -6,7 +6,7 @@ import "./style.css";
 import Design from "./Components/Design";
 import Homepage from "./Components/Homepage";
 import Mobile from "./Components/Mobile";
-import Product from "./Components/Product";
+import Product from "./Components/Product"; 
 
 // Material UI //
 import {
