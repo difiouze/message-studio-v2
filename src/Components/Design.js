@@ -2,19 +2,10 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
+import copyTitleToClipboard from '../utils/copyTitleToClipboard';
+import copyTextToClipboard from '../utils/copyTextToClipboard';
 
 const Design = ({ studioName }) => {
-
-  const copyDivToClipboard = (e) =>{
-    e.preventDefault();
-    e.stopPropagation();
-    let range = document.createRange();
-    range.selectNode(document.querySelector(".copySelection"));
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();// to deselect
-}
   
   return (
     <>
@@ -28,11 +19,11 @@ const Design = ({ studioName }) => {
       >
         <Box flexGrow={1}>
           <Typography className={"copySelection"}>
-            Studio Graphique &gt; Installation de votre design
+            <span id='copiedTitle'>Studio Graphique &gt; Installation de votre design</span>
           </Typography>
         </Box>
         <Box>
-          <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyDivToClipboard}/>
+          <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyTitleToClipboard}/>
         </Box>
       </Box>
 
@@ -45,7 +36,7 @@ const Design = ({ studioName }) => {
       >
         <Box flexGrow={1}>
           <Typography className={"copySelection"}>
-            Bonjour,
+            <span id='copiedText'>Bonjour,
             <br />
             <br />
             Notre studio graphique a installé votre présentation personnalisée
@@ -82,11 +73,12 @@ const Design = ({ studioName }) => {
             Cordialement,
             <br />
             {studioName} - Studio Graphique <br />
-            New Oxatis
+            New Oxatis</span>
+            
           </Typography>
         </Box>
         <Box>
-        <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyDivToClipboard}/>
+        <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyTextToClipboard}/>
         </Box>
       </Box>
     </>
