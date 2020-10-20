@@ -18,7 +18,7 @@ const Design = ({ studioName }) => {
         my={2}
       >
         <Box flexGrow={1}>
-          <Typography className={"copySelection"}>
+          <Typography>
             <span id='copiedTitle'>Studio Graphique &gt; Installation de votre design</span>
           </Typography>
         </Box>
@@ -35,7 +35,7 @@ const Design = ({ studioName }) => {
         p={2}
       >
         <Box flexGrow={1}>
-          <Typography className={"copySelection"}>
+          <Typography>
             <span id='copiedText'>Bonjour,
             <br />
             <br />
@@ -79,7 +79,7 @@ const Design = ({ studioName }) => {
         </Box>
         <Box className={'copySelection'}>
         <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyTextToClipboard}/>
-        <span id="copy-success">Message copié</span>
+        <span id="copy-success">Message copié !</span>
         </Box>
       </Box>
     </>

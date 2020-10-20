@@ -15,7 +15,7 @@ const copyTextToClipboard = () => {
     const copySuccess = document.getElementById("copy-success");
     copySuccess.classList.remove("copy-success--show");
   }
-  setTimeout(removeClass,1000);
+  setTimeout(removeClass,1500);
 }
   
   successMessage();
