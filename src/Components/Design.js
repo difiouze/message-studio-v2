@@ -5,7 +5,7 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 import copyTitleToClipboard from '../utils/copyTitleToClipboard';
 import copyTextToClipboard from '../utils/copyTextToClipboard';
 
-const Design = ({ studioName }) => {
+const Design = ({ studioName, designNumber }) => {
   
   return (
     <>
@@ -41,7 +41,7 @@ const Design = ({ studioName }) => {
             <br />
             <br />
             Notre studio graphique a installé votre présentation personnalisée
-            "NOMDUDESIGNCHROME" dans votre site Oxatis. <br />
+            "{designNumber} _Oxatis FR {(new Date().getFullYear())} - Design - Base de travail" dans votre site Oxatis. <br />
             <br />
             Pour activer votre nouveau graphisme, suivez la procédure suivante:
             <br />

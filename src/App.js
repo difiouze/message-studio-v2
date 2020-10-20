@@ -159,7 +159,7 @@ function App() {
               <Tab label="Mobile" />
             </Tabs>
 
-            {selectedTab === 0 && <Design studioName={studioName}/>}
+            {selectedTab === 0 && <Design studioName={studioName} designNumber={designNumber}/>}
             {selectedTab === 1 && (
               <Homepage
                 studioName={studioName}
@@ -169,7 +169,7 @@ function App() {
               />
             )}
             {selectedTab === 2 && <Product studioName={studioName} />}
-            {selectedTab === 3 && <Mobile />}
+            {selectedTab === 3 && <Mobile studioName={studioName} />}
           </Grid>
         </Container>
       </Paper>
