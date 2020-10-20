@@ -115,12 +115,13 @@ const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
             </span>
           </Typography>
         </Box>
-        <Box>
+        <Box className={'copySelection'}>
           <FormatQuoteIcon
             color={"primary"}
             className={"copySelection__icon"}
             onClick={copyTextToClipboard}
           />
+            <span id="copy-success">Message copié</span>
         </Box>
       </Box>
     </>
