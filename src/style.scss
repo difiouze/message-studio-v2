@@ -16,6 +16,20 @@ position: relative;
 }
 }
 
+.copyTitle {
+  position: relative;
+  
+  &__icon {
+      cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  }
+  }
+
 #copy-success {
   position: absolute; 
   //display: none;
@@ -34,5 +48,26 @@ position: relative;
 }
 
 span#copy-success.copy-success--show {
+  transform: scale(1);
+}
+
+#copyTitle-success {
+  position: absolute; 
+  //display: none;
+  font-size: 12px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    top: -19px;
+    width: auto;
+    text-align: center;
+    min-width: 90px;
+    left: 28px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+
+span#copyTitle-success.copyTitle-success--show {
   transform: scale(1);
 }

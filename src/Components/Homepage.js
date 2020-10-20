@@ -17,18 +17,19 @@ const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
         my={2}
       >
         <Box flexGrow={1}>
-          <Typography className={"copySelection"}>
+          <Typography>
             <span id="copiedTitle">
               Studio Graphique &gt; Livraison Page d’accueil
             </span>
           </Typography>
         </Box>
-        <Box>
+        <Box className='copyTitle'>
           <FormatQuoteIcon
             color={"primary"}
-            className={"copySelection__icon"}
+            className={"copyTitle__icon"}
             onClick={copyTitleToClipboard}
           />
+           <span id="copyTitle-success">Titre copié !</span>
         </Box>
       </Box>
       <Box

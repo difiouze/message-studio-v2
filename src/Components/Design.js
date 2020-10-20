@@ -22,8 +22,9 @@ const Design = ({ studioName }) => {
             <span id='copiedTitle'>Studio Graphique &gt; Installation de votre design</span>
           </Typography>
         </Box>
-        <Box>
-          <FormatQuoteIcon color={"primary"} className={"copySelection__icon"} onClick={copyTitleToClipboard}/>
+        <Box className='copyTitle'>
+          <FormatQuoteIcon color={"primary"} className={"copyTitle__icon"} onClick={copyTitleToClipboard}/>
+          <span id="copyTitle-success">Titre copié !</span>
         </Box>
       </Box>
 
