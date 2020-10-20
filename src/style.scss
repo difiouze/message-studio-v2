@@ -3,16 +3,35 @@ body {
 }
 
 .copySelection {
+position: relative;
 
 &__icon {
     cursor: pointer;
   transition: all 0.3s ease-in-out;
+  
 
 &:hover {
   opacity: 0.7;
 }
 }
+}
 
+#copy-success {
+  position: absolute; 
+  display: none;
+  font-size: 12px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    top: -19px;
+    width: auto;
+    text-align: center;
+    min-width: 80px;
+    left: 28px;
+}
 
-
+.copy-success--show {
+  
+  display: unset!important; 
 }
