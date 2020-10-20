@@ -121,7 +121,7 @@ const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
             className={"copySelection__icon"}
             onClick={copyTextToClipboard}
           />
-            <span id="copy-success">Message copié</span>
+            <span id="copy-success">Message copié !</span>
         </Box>
       </Box>
     </>

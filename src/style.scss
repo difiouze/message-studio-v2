@@ -18,7 +18,7 @@ position: relative;
 
 #copy-success {
   position: absolute; 
-  display: none;
+  //display: none;
   font-size: 12px;
     background-color: black;
     color: white;
@@ -27,11 +27,12 @@ position: relative;
     top: -19px;
     width: auto;
     text-align: center;
-    min-width: 80px;
+    min-width: 90px;
     left: 28px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
 }
 
-.copy-success--show {
-  
-  display: unset!important; 
+span#copy-success.copy-success--show {
+  transform: scale(1);
 }
