@@ -5,7 +5,7 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 import copyTitleToClipboard from '../utils/copyTitleToClipboard';
 import copyTextToClipboard from '../utils/copyTextToClipboard';
 
-const Mobile = ( {studioName}) => {
+const Mobile = ( {studioName, value}) => {
     return (
         <>
         <Box
@@ -37,7 +37,7 @@ const Mobile = ( {studioName}) => {
         <Box flexGrow={1}>
           <Typography>
             <span id='copiedText'>Bonjour,<br /><br />
-            Nous venons de finaliser l’intégration de votre page d’accueil Mobile sous le nom de " NOMDELAPAGE  ".<br /><br />
+            Nous venons de finaliser l’intégration de votre page d’accueil Mobile sous le nom de "_Oxatis FR {(new Date().getFullYear())} - Accueil Mobile - Base de travail".<br /><br />
             Numéro de votre page  sur mesure : XXXX<br />
             Lien : XXXXX<br /><br />
             Vous pouvez retrouver cette page sur mesure dans Contenu &gt; Pages sur mesure &gt; et repérer la ligne du nom de votre page.<br /><br />
@@ -45,7 +45,7 @@ const Mobile = ( {studioName}) => {
             La page sur mesure est déjà fonctionnelle sur la version mobile.<br /><br />
             Cordialement,
             <br />
-            {studioName} - Studio Graphique <br />
+            {studioName} - {value} <br />
             New Oxatis</span>
             
           </Typography>

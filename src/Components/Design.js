@@ -5,7 +5,7 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 import copyTitleToClipboard from '../utils/copyTitleToClipboard';
 import copyTextToClipboard from '../utils/copyTextToClipboard';
 
-const Design = ({ studioName, designNumber }) => {
+const Design = ({ studioName, designNumber, value }) => {
   
   return (
     <>
@@ -73,7 +73,7 @@ const Design = ({ studioName, designNumber }) => {
             <br />
             Cordialement,
             <br />
-            {studioName} - Studio Graphique <br />
+            {studioName} - {value} <br />
             New Oxatis</span>
             
           </Typography>

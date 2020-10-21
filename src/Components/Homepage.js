@@ -5,7 +5,7 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 import copyTitleToClipboard from "../utils/copyTitleToClipboard";
 import copyTextToClipboard from "../utils/copyTextToClipboard";
 
-const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
+const Homepage = ({ studioName, siteName, designNumber, webblockNumber, value }) => {
   return (
     <>
       <Box
@@ -46,7 +46,7 @@ const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
               <br />
               <br />
               Nous venons de finaliser l’intégration de votre page d’accueil
-              sous le nom de " _Oxatis FR 2020 - Accueil - Base de travail ".{" "}
+              sous le nom de "  {webblockNumber} _Oxatis FR {(new Date().getFullYear())} - Accueil - Base de travail ".{" "}
               <br />
               <br />
               Numéro de votre page sur mesure : {webblockNumber} <br />
@@ -111,7 +111,7 @@ const Homepage = ({ studioName, siteName, designNumber, webblockNumber }) => {
               <br />
               Cordialement,
               <br />
-              {studioName} - Studio Graphique <br />
+              {studioName} - {value} <br />
               New Oxatis
             </span>
           </Typography>
