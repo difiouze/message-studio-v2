@@ -203,7 +203,11 @@ function App() {
             </Tabs>
 
             {selectedTab === 0 && (
-              <Design studioName={studioName} designNumber={designNumber} value={value} />
+              <Design
+                studioName={studioName}
+                designNumber={designNumber}
+                value={value}
+              />
             )}
             {selectedTab === 1 && (
               <Homepage
@@ -214,8 +218,18 @@ function App() {
                 value={value}
               />
             )}
-            {selectedTab === 2 && <Product studioName={studioName} value={value} classes={classes}/>}
-            {selectedTab === 3 && <Mobile studioName={studioName} value={value} />}
+            {selectedTab === 2 && (
+              <Product
+                studioName={studioName}
+                siteName={siteName}
+                designNumber={designNumber}
+                value={value}
+                classes={classes}
+              />
+            )}
+            {selectedTab === 3 && (
+              <Mobile studioName={studioName} value={value} />
+            )}
           </Grid>
         </Container>
       </Paper>
