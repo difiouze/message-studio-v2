@@ -6,7 +6,7 @@ import "./style.css";
 import Design from "./Components/Design";
 import Homepage from "./Components/Homepage";
 import Mobile from "./Components/Mobile";
-import Product from "./Components/Product"; 
+import Product from "./Components/Product";
 
 // Material UI //
 import {
@@ -19,9 +19,15 @@ import {
   Tab,
   Switch,
   Box,
+  Select,
+  MenuItem,
+  FormControl,
+  FormHelperText,
+  InputLabel,
 } from "@material-ui/core";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 function App() {
   // Theme //
@@ -32,16 +38,23 @@ function App() {
     palette: {
       type: "dark",
       primary: {
-        main: '#F50057'
+        main: "#F50057",
       },
     },
   });
 
   const lightTheme = createMuiTheme({
-    palette: {
-      
-    },
+    palette: {},
   });
+
+  const useStyles = makeStyles((theme) => ({
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 200,
+    },
+  }));
+
+  const classes = useStyles();
 
   // Nom du site //
   const [siteName, setSiteName] = useState();
@@ -72,16 +85,23 @@ function App() {
     setStudioName(e.target.value);
   };
 
+  // ID Departement //
+
+  const [value, setValue] = useState();
+
+  const handleDepartmentChange = (e) => {
+    setValue(e.target.value);
+  };
+
   // Tabs //
   const [selectedTab, setSelectedTab] = useState(0);
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
 
-
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Paper square style={{ minHeight: "100vh", padding: "10px" }} >
+      <Paper square style={{ minHeight: "100vh", padding: "10px" }}>
         <div class="temp-navbar">
           <Switch
             checked={darkMode}
@@ -89,12 +109,47 @@ function App() {
           ></Switch>
         </div>
         <Box my={2}>
-        <Typography color="primary" variant="h4" align="center">
-          Studio Message Delivery
-        </Typography>
+          <Typography color="primary" variant="h4" align="center">
+            Studio Message Delivery
+          </Typography>
         </Box>
         <Container>
-          <Grid container spacing={1} justify={"center"} style={{margin: '15px 0'}}>
+          <Grid
+            container
+            spacing={1}
+            justify={"center"}
+            alignItems={"center"}
+            style={{ margin: "15px 0" }}
+          >
+            <Grid item>
+              <FormControl className={classes.formControl}>
+                <InputLabel>Département</InputLabel>
+                <Select
+                  labelId="test"
+                  label="test"
+                  displayEmpty
+                  value={value}
+                  onChange={handleDepartmentChange}
+                  autoWidth
+                >
+                  <MenuItem value="Studio Graphique">Studio Graphique</MenuItem>
+                  <MenuItem value="Chef de Projet">Chef de Projet</MenuItem>
+                </Select>
+                <FormHelperText>Sélectionnez votre département</FormHelperText>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <TextField
+                variant="outlined"
+                color="secondary"
+                type="text"
+                label="Votre prénom"
+                size="small"
+                placeholder="Votre prénom"
+                id="studioName"
+                onChange={studioNameHandler}
+              />
+            </Grid>
             <Grid item justify={"center"}>
               <TextField
                 variant="outlined"
@@ -105,18 +160,6 @@ function App() {
                 placeholder="Nom du site"
                 id="sitename-id"
                 onChange={siteNameHandler}
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                variant="outlined"
-                color="secondary"
-                type="text"
-                label="Numéro du Webblock"
-                size="small"
-                placeholder="Numéro du Webblock"
-                id="design-id"
-                onChange={webblockNumberHandler}
               />
             </Grid>
             <Grid item>
@@ -136,11 +179,11 @@ function App() {
                 variant="outlined"
                 color="secondary"
                 type="text"
-                label="Votre prénom"
+                label="Numéro du Webblock"
                 size="small"
-                placeholder="Votre prénom"
-                id="studioName"
-                onChange={studioNameHandler}
+                placeholder="Numéro du Webblock"
+                id="design-id"
+                onChange={webblockNumberHandler}
               />
             </Grid>
           </Grid>
@@ -159,17 +202,20 @@ function App() {
               <Tab label="Mobile" />
             </Tabs>
 
-            {selectedTab === 0 && <Design studioName={studioName} designNumber={designNumber}/>}
+            {selectedTab === 0 && (
+              <Design studioName={studioName} designNumber={designNumber} value={value} />
+            )}
             {selectedTab === 1 && (
               <Homepage
                 studioName={studioName}
                 siteName={siteName}
                 designNumber={designNumber}
                 webblockNumber={webblockNumber}
+                value={value}
               />
             )}
-            {selectedTab === 2 && <Product studioName={studioName} />}
-            {selectedTab === 3 && <Mobile studioName={studioName} />}
+            {selectedTab === 2 && <Product studioName={studioName} value={value} classes={classes}/>}
+            {selectedTab === 3 && <Mobile studioName={studioName} value={value} />}
           </Grid>
         </Container>
       </Paper>
