@@ -17,7 +17,7 @@ import {
   InputLabel,
 } from "@material-ui/core";
 
-const Product = ({ studioName, value, classes }) => {
+const Product = ({ studioName, siteName, designNumber, value, classes }) => {
   // ID Webblock //
 
   const [wbIdProduct, setWbIdProduct] = useState();
@@ -131,7 +131,7 @@ const Product = ({ studioName, value, classes }) => {
               sur mesure &gt; {wbIdProduct} {reaValue} <br />
               <br />
               Voici un exemple: <br />
-              Liens <br />
+  Lien : https://{siteName}.oxatis.com/PBSCProduct.asp?ItmID=30673346&DesignCode={designNumber}&ADContext=1&AVERTISSEMENT=NE-PAS-UTILISER-CETTE-URL <br />
               <br />
               Cet article n’étant étant lié à aucune catégorie les visiteurs ne
               pourront le voir.
